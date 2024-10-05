@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+{% block results %}
+<div class='results'>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <center><h2 style='color:white '><b>Your Top Songs</b></h2>
+     <h3 style="color:white"><b>Click on the play button to play any song</b></h3></center>
+     <p class='song' style=" font-size: 11pt ;color: white"></p>
+<table>
+ <thread>
+     <tr>
+         <th  scope="col" style="width:10%" ></th>
+         <th  scope="col" style="width:40%;text-align:center" >Title</th>
+         <th scope="col"style="width:20%;text-align:center" >Artist</th>
+         <th scope="col"style="width:20%;text-align:center">Album</th>
+         <th scope="col" style="width:10%;text-align:center">Duration</th>
+     </tr>
+ </thread>
+ <tbody>
+      {% for song in songs %}
+     <tr>
+         <td><a  href={{song[2]}} target="_blank"><img src="https://icon-library.com/images/custom-spotify-icon/custom-spotify-icon-23.jpg" alt="Play - Spotify Play Button Png@pngkey.com" width="40px" height="40px" ></a></td>
+         <td> <a  href={{song[2]}} target="_blank">{{song[0]}}</a></td>
+         <td>{{song[1]}}</td>
+         <td>{{song[4]}}</td>
+         <td>{{song[3]}}</td>
+     </tr>
+ </tbody>
+ {% endfor %} 
+</table> 
+</div>
+{% endblock %}
